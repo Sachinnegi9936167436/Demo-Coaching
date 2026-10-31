@@ -1,0 +1,12 @@
+export { HeroSection } from '../HeroSection';
+export { IntroductionSection } from '../IntroductionSection';
+export { FeaturedCoursesPinned } from '../FeaturedCoursesPinned';
+export { AchievementsSection } from '../AchievementsSection';
+export { CinematicStorytelling } from '../CinematicStorytelling';
+export { HorizontalGallerySection } from '../HorizontalGallerySection';
+export { FacultyShowcaseSection } from '../FacultyShowcaseSection';
+export { SuccessStoriesSection } from '../SuccessStoriesSection';
+export { LearningExperienceSection } from '../LearningExperienceSection';
+export { DemoVideoSection } from '../DemoVideoSection';
+export { FaqSection } from '../FaqSection';
+export { FinalCtaSection } from '../FinalCtaSection';

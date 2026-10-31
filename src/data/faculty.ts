@@ -1,0 +1,85 @@
+import { FacultyMember } from '@/types/faculty';
+
+export const facultyPlaceholders: FacultyMember[] = [
+    {
+      slug: "dr-ar-sharma",
+      name: "Dr. A. R. Sharma [Placeholder Profile]",
+      designation: "Academic Dean & Head of Pure Mathematics",
+      credentials: "Ph.D. Applied Mathematics; 22+ Years Veteran Educator [Exemplar Credentials]",
+      specialization: "Calculus, Coordinate Geometry & Non-Routine Olympiad Proofs",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      bio: "Renowned for deconstructing convoluted multi-step integrals into intuitive geometric transformations. Over two decades guiding national Olympiad scholars and top rankers.",
+      philosophy: "Mathematics is not a sequence of recipes; it is the study of inescapable patterns. Once you internalize why a theorem must be true, the formulas become self-evident.",
+      education: [
+        "Ph.D. Applied Mathematics, Indian Institute of Science [Exemplar]",
+        "M.Sc. Pure Mathematics, St. Stephen's College [Exemplar]",
+      ],
+      experience: "22+ years of senior faculty and academic dean experience across premier national institutions.",
+      coursesTaught: [
+        "JEE (Advanced) & Physics Olympiad Pinnacle Fellowship",
+        "Foundation STEM, Olympiads & High-Order Reasoning",
+        "Quantitative Mastery & Executive Career Advancement",
+      ],
+      officeHours: "Tuesdays & Thursdays: 04:00 PM – 06:30 PM (Consultation Room Alpha)",
+    },
+    {
+      slug: "prof-vikramaditya-sen",
+      name: "Prof. Vikramaditya Sen [Placeholder Profile]",
+      designation: "Director of Theoretical & Experimental Physics",
+      credentials: "M.Tech IIT Kharagpur; Former Senior Research Fellow [Exemplar Credentials]",
+      specialization: "Rotational Dynamics, Electrodynamics & Quantum Foundations",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+      bio: "Instills deep scientific intuition by translating differential field equations into physical simulations that scholars can visualize instinctively.",
+      philosophy: "Nature is governed by conservation of energy and symmetry. If your solution does not respect physical symmetry, you made an algebra mistake three lines ago.",
+      education: [
+        "M.Tech Applied Mechanics, IIT Kharagpur [Exemplar]",
+        "B.Tech Mechanical Engineering, IIT Kharagpur [Exemplar]",
+      ],
+      experience: "18+ years mentoring top 100 AIR rankers in national engineering entrance competitions.",
+      coursesTaught: [
+        "JEE (Advanced) & Physics Olympiad Pinnacle Fellowship",
+        "NEET-UG Medical Excellence & Clinical Aptitude Fellowship",
+      ],
+      officeHours: "Mondays & Wednesdays: 03:30 PM – 06:00 PM (Physics Laboratory Suite)",
+    },
+    {
+      slug: "dr-meenakshi-sundaram",
+      name: "Dr. Meenakshi Sundaram [Placeholder Profile]",
+      designation: "Chair of Life Sciences & Clinical Medicine",
+      credentials: "MD, MBBS Central Institute; Gold Medalist in Pathology [Exemplar Credentials]",
+      specialization: "Cellular Genetics, Human Physiology & Molecular Botany",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      bio: "Bridges the gap between secondary school biology and modern clinical medical practice, making NCERT syllabi unforgettable through vivid clinical correlations.",
+      philosophy: "Biology is the most elegant chemical engineering system in the cosmos. Treat human physiology as a living diagnostic story, not a vocabulary test.",
+      education: [
+        "MD Pathology, All India Institute of Medical Sciences [Exemplar]",
+        "MBBS, Maulana Azad Medical College [Exemplar]",
+      ],
+      experience: "16+ years training aspiring surgeons and doctors for 700+ score NEET benchmarks.",
+      coursesTaught: [
+        "NEET-UG Medical Excellence & Clinical Aptitude Fellowship",
+        "Foundation STEM, Olympiads & High-Order Reasoning",
+      ],
+      officeHours: "Wednesdays & Fridays: 02:00 PM – 05:00 PM (Clinical Biology Suite)",
+    },
+    {
+      slug: "adv-rajeshwar-rao",
+      name: "Adv. Rajeshwar Rao [Placeholder Profile]",
+      designation: "Head of Governance, Public Policy & Jurisprudence",
+      credentials: "Former Public Administrator & Constitutional Scholar [Exemplar Credentials]",
+      specialization: "Indian Polity, Administrative Ethics & Geopolitics",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80",
+      bio: "Pioneered the analytical framework for UPSC GS-II & GS-IV answers, teaching aspirants how to think like a policy architect and ethical public servant.",
+      philosophy: "A civil servant must possess the heart of a poet and the mind of a forensic accountant. Clarity of constitutional thought precedes clarity of governance.",
+      education: [
+        "LL.M. Constitutional Law, National Law School of India University [Exemplar]",
+        "M.A. Public Administration [Exemplar]",
+      ],
+      experience: "20+ years advising administrative training academies and training senior policy aspirants.",
+      coursesTaught: [
+        "Civil Services (UPSC) & Public Policy Strategic Track",
+        "Quantitative Mastery & Executive Career Advancement",
+      ],
+      officeHours: "Saturdays: 10:00 AM – 02:00 PM (Executive Seminar Chamber)",
+    },
+  ];
