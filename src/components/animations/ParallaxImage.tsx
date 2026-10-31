@@ -30,15 +30,20 @@ export function ParallaxImage({
       desktop: '(min-width: 1024px) and (pointer: fine)',
     }, (context) => {
       if (!context.conditions?.motion) return;
-      const distance = Math.min(14, Math.abs(travel)) * (context.conditions.desktop ? 1 : 0.4);
-      gsap.fromTo(layerRef.current, { yPercent: -distance }, {
+      const desktop = context.conditions.desktop;
+      const distance = Math.min(14, Math.abs(travel));
+      gsap.fromTo(layerRef.current, {
+        yPercent: -distance,
+        scale: desktop ? 1 : 1.07,
+      }, {
         yPercent: distance,
+        scale: 1,
         ease: 'none',
         scrollTrigger: {
           trigger: frameRef.current,
           start: 'top bottom',
           end: 'bottom top',
-          scrub: 0.7,
+          scrub: desktop ? 0.7 : 0.25,
           invalidateOnRefresh: true,
         },
       });

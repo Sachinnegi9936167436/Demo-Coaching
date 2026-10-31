@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { CinematicImageStack } from '@/components/animations/CinematicImageStack';
+import { ParallaxImage } from '@/components/animations/ParallaxImage';
 import { PINNED_SCENE_QUERY } from '@/lib/animations/gsapUtils';
 import { useLenis } from '@/hooks/useLenis';
 
@@ -235,7 +235,7 @@ export const FeaturedCoursesPinned: React.FC = () => {
 
           <div className="space-y-8">
             {showcaseCourses.map((course) => (
-              <div key={course.num} className="card-luxury p-6 sm:p-8 bg-[#081321]">
+              <div key={course.num} data-mobile-depth className="card-luxury p-6 sm:p-8 bg-[#081321]">
                 <div className="flex justify-between items-start mb-4">
                   <span className="px-2.5 py-1 bg-[#D7B879]/10 border border-[#D7B879] rounded text-[10px] text-[#D7B879] uppercase">
                     {course.category}
@@ -247,12 +247,11 @@ export const FeaturedCoursesPinned: React.FC = () => {
                 <p className="text-xs sm:text-sm text-[#d2d9e2] leading-relaxed mb-4">{course.description}</p>
 
                 <div className="relative h-56 rounded-lg overflow-hidden border border-[#D7B879]/20 mb-5">
-                  <Image
+                  <ParallaxImage
                     src={course.image}
                     alt={course.title}
-                    fill
                     sizes="(max-width: 768px) 100vw, 500px"
-                    className="object-cover"
+                    className="absolute inset-0"
                   />
                 </div>
 

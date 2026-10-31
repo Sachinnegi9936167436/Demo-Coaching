@@ -35,17 +35,21 @@ export function HeroSection({ onOpenCounsellingModal }: HeroSectionProps) {
         defaults: { ease: 'none', duration: 1 },
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top top', end: 'bottom top', scrub: 1.1,
+          start: desktop ? 'top top' : 'top bottom',
+          end: 'bottom top',
+          scrub: desktop ? 1.1 : 0.35,
           invalidateOnRefresh: true,
         },
       });
       timeline
-        .to('.hero-landscape', { yPercent: desktop ? 19 : 8, scale: 1.06 }, 0)
-        .to('.hero-content-depth', { y: desktop ? -135 : -45 }, 0)
+        .fromTo('.hero-landscape',
+          { yPercent: desktop ? 0 : -11, scale: desktop ? 1 : 1.08 },
+          { yPercent: desktop ? 19 : 11, scale: desktop ? 1.06 : 1.02 }, 0)
+        .to('.hero-content-depth', { y: desktop ? -135 : -80 }, 0)
         .to('.hero-content-depth', { opacity: 0, duration: 0.55 }, 0.45)
-        .to('.hero-orbit', { rotation: 38, y: desktop ? -90 : -25 }, 0)
-        .to('.hero-watermark', { xPercent: -12, y: desktop ? -75 : -20 }, 0)
-        .to('.hero-scroll-cue', { opacity: 0, y: -30, duration: 0.2 }, 0);
+        .to('.hero-orbit', { rotation: desktop ? 38 : 65, y: desktop ? -90 : -50 }, 0)
+        .to('.hero-watermark', { xPercent: desktop ? -12 : -24, y: desktop ? -75 : -50 }, 0)
+        .to('.hero-scroll-cue', { opacity: 0, y: -30, duration: 0.2 }, desktop ? 0 : 0.55);
     }, containerRef);
     return () => media.revert();
   }, []);

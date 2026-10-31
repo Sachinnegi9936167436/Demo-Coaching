@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Sparkles } from 'lucide-react';
 import { CinematicImageStack } from '@/components/animations/CinematicImageStack';
+import { ParallaxImage } from '@/components/animations/ParallaxImage';
 import { PINNED_SCENE_QUERY } from '@/lib/animations/gsapUtils';
 
 interface StoryStage {
@@ -178,7 +178,7 @@ export const CinematicStorytelling: React.FC = () => {
 
           <div className="space-y-8">
             {storyStages.map((stage) => (
-              <div key={stage.numeral} className="card-luxury p-6 bg-[#102338]">
+              <div key={stage.numeral} data-mobile-depth className="card-luxury p-6 bg-[#102338]">
                 <span className="font-display text-xs text-[#18B6AE] tracking-widest uppercase block mb-2">
                   {stage.numeral}
                 </span>
@@ -186,12 +186,11 @@ export const CinematicStorytelling: React.FC = () => {
                 <p className="text-xs sm:text-sm text-[#d2d9e2] leading-relaxed mb-4">{stage.narrative}</p>
 
                 <div className="relative h-48 rounded-lg overflow-hidden border border-[#D7B879]/20 mb-4">
-                  <Image
+                  <ParallaxImage
                     src={stage.image}
                     alt={stage.stageTitle}
-                    fill
                     sizes="(max-width: 768px) 100vw, 500px"
-                    className="object-cover"
+                    className="absolute inset-0"
                   />
                 </div>
 

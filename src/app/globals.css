@@ -659,6 +659,17 @@ html.lenis, html.lenis body {
   .hero-orbit { width: 125vw; top: 21%; }
   .hero-watermark { left: 4%; bottom: 20px; font-size: 27vw; }
 }
+@media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+  .mobile-motion-enabled [data-mobile-depth] {
+    opacity: 0.68;
+    transform: translate3d(0, 28px, 0);
+    transition: opacity 0.65s ease, transform 0.9s var(--ease-cinematic);
+  }
+  .mobile-motion-enabled [data-mobile-depth].is-in-view {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
 @media (prefers-reduced-motion: no-preference) {
   .hero-landscape, .hero-content-depth, .parallax-image__layer,
   .gallery-track, .gallery-image-plane { will-change: transform; }

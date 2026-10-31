@@ -144,7 +144,7 @@ export function HorizontalGallerySection() {
           <h2 className="section-clamp-heading mb-10">A space for <span className="italic text-[#D7B879]">possibility.</span></h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {galleryItems.map((item) => (
-              <figure key={item.num} className="overflow-hidden border border-[#D7B879]/20 bg-[#081321]">
+              <figure key={item.num} data-mobile-depth className="overflow-hidden border border-[#D7B879]/20 bg-[#081321]">
                 <ParallaxImage src={item.image} alt={item.title} sizes="(max-width: 640px) 100vw, 50vw" className="h-64" imageClassName="brightness-[0.8]" />
                 <figcaption className="p-6">
                   <span className="text-[10px] text-[#D7B879] tracking-[0.2em]">{item.num} / THE SANCTUARY</span>

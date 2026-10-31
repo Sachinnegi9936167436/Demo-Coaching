@@ -4,13 +4,13 @@ The homepage uses the existing GSAP, ScrollTrigger and Lenis dependencies. No ad
 
 - **Hero:** the campus photograph, foreground copy, circular outlines and oversized lettering move on independent scroll planes.
 - **Introduction:** the library crop opens to full width while the photograph and background lettering drift independently.
-- **Courses and scholar journey:** desktop scenes pin while chapters change with image wipes, crossfades and text entrances. Course selectors scroll to the corresponding chapter.
+- **Courses and scholar journey:** desktop scenes pin while chapters change with image wipes, crossfades and text entrances. Course selectors scroll to the corresponding chapter. On phones, each card enters as its photograph moves independently with scroll.
 - **Campus gallery:** vertical scrolling travels across large landscape panels; each photograph moves against the track.
 - **Learning experience and final call to action:** photographs and copy move at different speeds.
 
 ## Tune the motion
 
-`src/components/animations/ParallaxImage.tsx` controls reusable image movement. Its `travel` prop defaults to 12 and is capped at 14 to keep the oversized photograph inside its crop. Touch and small screens use 40% of that movement.
+`src/components/animations/ParallaxImage.tsx` controls reusable image movement. Its `travel` prop defaults to 12 and is capped at 14 to keep the oversized photograph inside its crop. Phones use the full distance with a slight zoom out so the effect is visible during a swipe. The phone hero also starts moving as soon as it enters the viewport.
 
 `src/components/HeroSection.tsx` contains the hero timeline. Adjust the `yPercent`, `y` and `rotation` values there to tune its depth.
 

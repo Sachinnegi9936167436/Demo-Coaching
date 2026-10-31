@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Preloader } from '@/components/Preloader';
 import { HeroSection } from '@/components/HeroSection';
@@ -34,9 +34,39 @@ const DemoVideoSection = dynamic(
 
 export const HomePageClient: React.FC = () => {
   const [isCounsellingModalOpen, setIsCounsellingModalOpen] = useState(false);
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const page = pageRef.current;
+    if (!page) return;
+    const media = window.matchMedia('(max-width: 1023px) and (prefers-reduced-motion: no-preference)');
+    let observer: IntersectionObserver | null = null;
+
+    const sync = () => {
+      observer?.disconnect();
+      page.classList.toggle('mobile-motion-enabled', media.matches);
+      if (!media.matches) return;
+
+      observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add('is-in-view');
+          observer?.unobserve(entry.target);
+        }
+      }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+      page.querySelectorAll<HTMLElement>('[data-mobile-depth]').forEach((card) => observer?.observe(card));
+    };
+
+    sync();
+    media.addEventListener('change', sync);
+    return () => {
+      media.removeEventListener('change', sync);
+      observer?.disconnect();
+    };
+  }, []);
 
   return (
-    <div className="relative">
+    <div ref={pageRef} className="relative">
       {/* Session-Aware Initial Identity Preloader */}
       <Preloader />
 
